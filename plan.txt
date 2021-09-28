@@ -1,0 +1,32 @@
+Task - adding custom errorHandler
+--------------------------------------------------------------------------------------------
+Whenever error is encountered in login, register or any function using 'next' argument
+example: login = async (req, res, next){}
+
+then 'next' operator automatically binds error handler with the server
+
+hence we will utilise this feature and build a custom error handler
+because it is unecessary to write res.status(400).json('Error') again and again
+
+Step 1: build a ErrorReponse class.  see 'utils/errorResponse.js'
+Step 2: make an errorHandler. see 'middleware/error.js'
+Step 3: use errorHandler in 'server.js'
+Step 4: use errorResponse if error is encountered in response time
+----------------------------------------------------------------------------------------------
+
+
+
+Task - Implementing JWT Toekn
+------------------------------------------------------------------------------------------------------
+Step 1: To use JWT Token install 'jwtwebtoken'
+Step 2: use user._id, JWT_SECRET, JWT_EXPIRE to create a JWT Token, see getSignedToken() in USER model
+STEP 3: create a function 'sendToken()' which takes in user, statusCode, res as arguments
+STEP 4: use sendToken() to send the response with the token 
+-------------------------------------------------------------------------------------------------------
+
+
+Task - Implementing Private Route
+-------------------------------------------------------------------------------------------------------
+STEP 1: create a private route and use in router(), see '> routes/private.js'
+STEP 2: get request takes in takes in 'getrPrivateData' controller and 'protect' middleware
+STEP 3: 'protect' middleware, see > middleware/auth.js
