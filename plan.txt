@@ -30,3 +30,19 @@ Task - Implementing Private Route
 STEP 1: create a private route and use in router(), see '> routes/private.js'
 STEP 2: get request takes in takes in 'getrPrivateData' controller and 'protect' middleware
 STEP 3: 'protect' middleware, see > middleware/auth.js
+
+
+Task - Implementing forgotPassword feature
+------------------------------------------------------------------------------------------
+STEP 1: create a post '/forgotpassword' route in 'cd > routes/auth'
+STEP 2: create 'forgotpassword' controller in 'cd > controllers/auth'
+STEP 3: Creating 'ForgotPassword' controller :
+        STEP 3.1: generate a resetPasswordToken in 'cd > models/User'
+        STEP 3.2: save resetPasswordToken and resetPasswordExpire in user profile
+        STEP 3.3: genarate 'resetUrl', 'message'
+        STEP 3.4: use sendEmail serivce using nodemailer 'cd > utils/sendEmail'
+        STEP 3.5: create 'passwordreset' route to embed in 'resetUrl' 
+        STEP 3.6: Creating 'ResetPassword' controller: 
+                  STEP 3.6.1: take in 'resetToken' using params
+                  STEP 3.6.2: search user having particular token and update his password
+                  
